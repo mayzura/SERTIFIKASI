@@ -19,13 +19,20 @@
 
         <div class="row">
             <div class="col">
-                <h3><i class="nav-icon fas fa-clipboard-list my-1 btn-sm-1"></i> Kategori Surat</h3>
+                <h3><i class="nav-icon fas fa-layer-group my-1 btn-sm-1"></i> Kategori Surat</h3>
                 <hr>
             </div>
         </div>
-        <!-- Topbar Search -->
-        <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div>
+            <div class="col">
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                    data-target="#tambahklasifikasi"><i class="fas fa-plus"></i>
+                    Tambah Data
+                </button>
+            </div>
+            <br>
+        </div>
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
@@ -72,6 +79,40 @@
 
                 </table>
 
+            </div>
+        </div>
+
+        <!-- Modal Tambah -->
+        <div class="modal fade" id="tambahklasifikasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><i
+                                class="nav-icon fas fa-layer-group my-1 btn-sm-1"></i> Tambah Data Kategori</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/klasifikasi/tambah" method="POST">
+                            {{csrf_field()}}
+                            <div class="row">
+                                <div class="col">
+                                    <label for="nama">Nama</label>
+                                    <input name="nama" type="text" class="form-control bg-light" id="nama"
+                                        placeholder="Nama Klasifikasi" required>
+                                    <label for="kode">Kode</label>
+                                    <input name="kode" type="text" class="form-control bg-light" id="kode"
+                                        placeholder="Kode Klasifikasi" required>
+                                </div>
+                            </div>
+                            <hr>
+                            <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-save"></i>
+                                SIMPAN</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
