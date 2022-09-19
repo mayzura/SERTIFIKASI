@@ -27,6 +27,8 @@ Route::get('/suratmasuk/{id}/tampil',[SuratMasukController::class, 'tampil'])->n
 Route::get('/suratmasuk/{id}/edit',[SuratMasukController::class, 'edit'])->name('edit');
 Route::post('/suratmasuk/{id}/update',[SuratMasukController::class, 'update'])->name('update');
 Route::get('/suratmasuk/{id}/delete',[SuratMasukController::class, 'delete'])->name('delete');
+Route::get('/suratmasuk/search',[SuratMasukController::class, 'search'])->name('search');
+
 
 Route::get('/klasifikasi', [KlasifikasiController::class, 'index'])->name('index');
 Route::get('/klasifikasi/index',[KlasifikasiController::class, 'index'])->name('index');
@@ -35,5 +37,6 @@ Route::post('/klasifikasi/tambah',[KlasifikasiController::class, 'tambah'])->nam
 Route::get('/klasifikasi/{id}/edit',[KlasifikasiController::class, 'edit'])->name('edit');
 Route::post('/klasifikasi/{id}/update',[KlasifikasiController::class, 'update'])->name('update');
 Route::get('/klasifikasi/{id}/delete',[KlasifikasiController::class, 'delete'])->name('delete');
+Route::get('/klasifikasi/search',[KlasifikasiController::class, 'search'])->name('search');
 
 Route::get('/profile',[ProfileController::class, 'index'])->name('index');

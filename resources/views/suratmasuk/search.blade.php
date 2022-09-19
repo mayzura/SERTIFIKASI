@@ -44,8 +44,9 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @if(!empty($suratmasuk) && $suratmasuk ->count())
                         <?php $no = 0;?>
-                        @foreach($data_suratmasuk as $suratmasuk)
+                        @foreach($suratmasuk as $suratmasuk)
                         <?php $no++ ;?>
                         <tr>
                             <td>{{$no}}</td>
@@ -69,6 +70,11 @@
                         </tr>
 
                         @endforeach
+                        @else
+                            <tr>
+                            <td colspan="10">There are no data.</td>
+                            </tr>
+                        @endif
                     </tbody>
 
                 </table>

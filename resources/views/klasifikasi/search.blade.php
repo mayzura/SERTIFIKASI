@@ -32,7 +32,7 @@
             </div>
             <br>
         </div>
-        <form class="form" method="get" action="/klasifikasi/search">
+        <form class="form" method="get" action="/search">
             <div class="form-group w-100 mb-3">
                 <label for="search" class="d-block mr-2">Pencarian</label>
                 <input type="text" name="search" class="form-control w-75 d-inline" value="{{ old('search') }}" id="search" placeholder="Masukkan keyword">
@@ -51,8 +51,9 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if(!empty($klasifikasi) && $klasifikasi->count())
                         <?php $no = 0;?>
-                        @foreach($data_klasifikasi as $klasifikasi)
+                        @foreach($klasifikasi as $klasifikasi)
                         <?php $no++ ;?>
                         <tr>
                             <td>{{$no}}</td>
@@ -69,6 +70,11 @@
                             </td>
                         </tr>
                         @endforeach
+                        @else
+                            <tr>
+                            <td colspan="10">There are no data.</td>
+                            </tr>
+                        @endif
                     </tbody>
 
                 </table>
@@ -111,5 +117,6 @@
         </div>
     </div>
     </div>
-</section><br>
+</section>
+<br>
 @endsection

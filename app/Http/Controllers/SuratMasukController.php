@@ -121,4 +121,11 @@ class SuratMasukController extends Controller
         $suratmasuk->delete();
         return redirect('suratmasuk/index')->with('sukses','Data Surat Masuk Berhasil Dihapus');
     }
+    public function search(Request $request){
+        $keyword = $request->search;
+
+    $suratmasuk = SuratMasuk::where('isi', 'like', "%" . $keyword . "%")->paginate(5);
+    return view('suratmasuk.search', compact('suratmasuk'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }

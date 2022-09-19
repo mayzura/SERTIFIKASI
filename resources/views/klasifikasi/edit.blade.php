@@ -18,7 +18,7 @@
         </div>
         @endif
         <form action="/klasifikasi/{{$klasifikasi->id}}/update" method="POST">
-            <h3><i class="nav-icon fas fa-layer-group my-1 btn-sm-1"></i> Edit Klasifikasi</h3>
+            <h3><i class="nav-icon fas fa-clipboard-list my-1 btn-sm-1"></i> Edit Klasifikasi</h3>
             <hr>
             {{csrf_field()}}
             <div class="row">
@@ -30,12 +30,6 @@
                     <input name="kode" type="text" class="form-control bg-light" id="kode"
                         placeholder="Kode Klasifikasi" value="{{$klasifikasi->kode}}" required>
                 </div>
-                <div class="col-6">
-                    <label for="uraian">Uraian</label>
-                    <textarea name="uraian" class="form-control bg-light" id="uraian" rows="3"
-                        placeholder="Uraian Klasifikasi" value="{{$klasifikasi->uraian}}"
-                        required>{{$klasifikasi->uraian}}</textarea>
-                </div>
             </div>
             <hr>
             <button type="submit" class="btn btn-success btn-sm "><i class="fas fa-save"></i> SIMPAN</button>
@@ -45,4 +39,5 @@
     </div>
     <br>
 </section>
+<br>
 @endsection

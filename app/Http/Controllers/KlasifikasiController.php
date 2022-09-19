@@ -105,4 +105,12 @@ class KlasifikasiController extends Controller
         $klasifikasi->delete();
         return redirect('klasifikasi/index') ->with('sukses','Data Klasifikasi Berhasil Dihapus');
     }
+    public function search(Request $request){
+        $keyword = $request->search;
+
+    $klasifikasi = Klasifikasi::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+    return view('klasifikasi.search', compact('klasifikasi'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
 }
