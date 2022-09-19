@@ -25,13 +25,12 @@
         </div>
         <div>
             <div class="col">
-                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                    data-target="#tambahklasifikasi"><i class="fas fa-plus"></i>
-                    Tambah Data
-                </button>
+                <a class="btn btn-primary btn-sm my-1 mr-sm-1" href="create" role="button"><i class="fas fa-plus"></i>
+                    Tambah Data</a>
+                <br>
             </div>
-            <br>
         </div>
+        <br>
         <form class="form" method="get" action="/klasifikasi/search">
             <div class="form-group w-100 mb-3">
                 <label for="search" class="d-block mr-2">Pencarian</label>
@@ -77,7 +76,7 @@
         </div>
 
         <!-- Modal Tambah -->
-        <div class="modal fade" id="tambahklasifikasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade tambahklasifikasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

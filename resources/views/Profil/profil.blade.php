@@ -13,7 +13,7 @@
                     <h6>NIM  &nbsp;: 1931710058</h6>
                     <h6>Jurusan &nbsp;: Teknologi Informasi</h6>
                     <h6>Prodi &nbsp;: Manajemen Informatika</h6>
-                    <h6>Tanggal &nbsp;: 14 September 2022</h6>
+                    <h6>Tanggal &nbsp;: 15 September 2022</h6>
                 </div>
             </div>
         </div>
